@@ -20,28 +20,31 @@ import "./layout.css"
                 <a href='/gym'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-700 rounded-[12px] grid place-content-center transition-colors ">Gym.</a>
                 <a href='/settings'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-700 rounded-[12px] grid place-content-center transition-colors ">Settings.</a>
             </div>
-            <div class="bg-neutral-700 rounded-[12px] flex px-5">
-                <input type="text" placeholder="Search up..." class="md:w-1/2 w-full mx-auto text-base mt-5 mb-5 py-2 px-4 rounded-[12px] bg-neutral-600 placeholder-neutral-500 border-0 outline-none">
-                <a href=""></a>
+            <div id="cards">
+                <div class="bg-neutral-700 rounded-[12px] flex px-5 card">
+                    <input type="text" placeholder="Search up..." class="z-10 md:w-1/2 w-full mx-auto text-base mt-5 mb-5 py-2 px-4 rounded-[12px] bg-neutral-600 placeholder-neutral-500 border-0 outline-none transition-colors duration-500 hover:bg-neutral-800">
+                    <a href=""></a>
+                </div>
             </div>
         </nav>
     <main class="bg-neutral-700 rounded-[12px] h-screen p-5">
         <slot/>
     </main>
     <div class="bg-neutral-700 rounded-[12px] ">
-    <Footer />
+    <Footer      />
     </div>
     </div>
 	</body>
     <script>
-        document.getElementById("cards").onmousemove = e => {
-        for(const card of document.getElementsByClassName("card")) {
+        document.querySelectorAll("#cards").forEach(element => {
+        element.onmousemove = e => {
+            for(const card of document.querySelectorAll(".card")) {
             const rect = card.getBoundingClientRect(),
                 x = e.clientX - rect.left,
                 y = e.clientY - rect.top;
                 card.style.setProperty("--mouse-x", `${x}px`);
                 card.style.setProperty("--mouse-y", `${y}px`);
         };
-        }
+        }});
     </script>
 </html>
