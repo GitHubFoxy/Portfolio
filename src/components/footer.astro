@@ -1,0 +1,32 @@
+---
+const now = new Date();
+const day = now.getDate();
+const month = now.getUTCMonth() + 1
+const year = now.getFullYear()
+---
+
+<div class="flex flex-row justify-center gap-4 items-center relative p-4 lg:p-6">
+        <ul class="lg:absolute flex flex-row gap-4">
+            <li>
+                <a href="https://t.me/beruseruku" target="_blank">
+                    <img src="/tg-icon-2.png" alt="" class="hover:bg-neutral-500 rounded-full transition-colors">
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/GitHubFoxy" target="_blank">
+                    <img src="/github-icon.png" alt="" class="hover:bg-neutral-500 rounded-full transition-colors">
+                </a>
+            </li>
+            <li>
+                <a href="https://vk.com/beruseruko" target="_blank">
+                    <img src="/vk-icon.png" alt="" class="hover:bg-neutral-500 rounded-full transition-colors">
+                </a>
+            </li>
+            <li>
+                <a href="mailto:ambrosayos@mail.ru" target="_blank">
+                    <img src="/mail-logo.png" alt="" class="hover:bg-neutral-500 rounded-full transition-colors">
+                </a>
+            </li>
+        </ul>
+        <div class="hidden ml-auto lg:block">{day}.0{month}.{year}</div>
+</div>

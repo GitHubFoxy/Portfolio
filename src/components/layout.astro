@@ -1,3 +1,6 @@
+---
+import Footer from '../components/footer.astro'
+---
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
@@ -24,6 +27,9 @@
     <main class="bg-neutral-700 rounded-[12px] h-screen p-5">
         <slot/>
     </main>
+    <div class="bg-neutral-700 rounded-[12px] ">
+    <Footer />
+    </div>
     </div>
 	</body>
 </html>
