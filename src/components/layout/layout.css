@@ -1,0 +1,29 @@
+:root {
+    --mouse-x: 100px;
+    --mouse-y: 100px
+}
+
+.card::before {
+    border-radius: inherit;
+    content: "";
+    height: 100%;
+    left: 0px;
+    position: absolute;
+    opacity: 0;
+    top: 0px;
+    width: 100%;
+    background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y), 
+    #525252,
+    transparent 40%);
+    z-index: -2;
+    transition: all 200ms;
+
+}
+.card {
+    position: relative;
+    z-index: 100;
+}
+.card:hover::before {
+    opacity: 1;
+}
