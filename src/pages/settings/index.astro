@@ -2,6 +2,27 @@
 import Layout from "../../components/layout/layout.astro";
 ---
 <Layout>
+    <div class="flex flex-row gap-5">
+        <button  id="lightbtn" class="py-1 px-4 bg-neutral-300 rounded-[12px] text-white">Light</button>
+        <button  id="darkbtn" class="py-1 px-4 bg-neutral-600 rounded-[12px]">Dark</button>
+    </div>
     <h1>Page for settings</h1>
     <p>Will be done purely with htmx</p>
 </Layout>
+<script>
+console.log('settings')
+document.querySelector('#lightbtn')?.addEventListener('click', lightTheme)
+function lightTheme() {
+    localStorage.setItem('theme','light')
+    console.log('theme light')
+    document.documentElement.classList.add('light')
+    document.documentElement.classList.remove('dark')
+}
+document.querySelector('#darkbtn')?.addEventListener('click', darkTheme)
+function darkTheme() {
+    localStorage.setItem('theme','dark')
+    console.log('dark theme')
+    document.documentElement.classList.remove('light')
+    document.documentElement.classList.add('dark')
+}
+</script>

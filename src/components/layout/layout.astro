@@ -7,30 +7,30 @@ import "./layout.css"
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
         <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+        <link rel="shortcut icon" href="./public/favicon.ico" type="image/x-icon">
 		<title>beruseruko.</title>
 	</head>
-	<body class="bg-neutral-800 font-mont font-normal text-2xl p-5">
+	<body class="bg-neutral-300 dark:bg-neutral-800 font-mont font-normal text-2xl p-5">
 	<div class="sm:mx-[15%] flex flex-col gap-5">
         <nav class="flex flex-col gap-5" >
             <div id="cards" class="grid grid-cols-2 gap-5  lg:flex lg:gap-5 place-content-center ">
-                <a href='/'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-500 rounded-[12px] grid place-content-center transition-colors ">Home.</a>
-                <a href='/blog'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-700 rounded-[12px] grid place-content-center transition-colors ">Blog.</a>
-                <a href='/gym'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-700 rounded-[12px] grid place-content-center transition-colors ">Gym.</a>
-                <a href='/settings'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-700 rounded-[12px] grid place-content-center transition-colors ">Settings.</a>
+                <a href='/'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-400 dark:bg-neutral-700 rounded-[12px] grid place-content-center transition-colors">Home.</a>
+                <a href='/blog'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-400 dark:bg-neutral-700 rounded-[12px] grid place-content-center transition-colors ">Blog.</a>
+                <a href='/gym'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-400 dark:bg-neutral-700 rounded-[12px] grid place-content-center transition-colors ">Gym.</a>
+                <a href='/settings'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-400 dark:bg-neutral-700 rounded-[12px] grid place-content-center transition-colors ">Settings.</a>
             </div>
             <div id="cards">
-                <div class="bg-neutral-700 rounded-[12px] flex px-5 card">
-                    <input type="text" placeholder="Search up..." class="z-10 md:w-1/2 w-full mx-auto text-base mt-5 mb-5 py-2 px-4 rounded-[12px] bg-neutral-600 placeholder-neutral-500 border-0 outline-none transition-colors duration-500 hover:bg-neutral-800">
-                    <a href=""></a>
+                <div class="dark:bg-neutral-700 rounded-[12px] flex px-5 card bg-neutral-400">
+                    <input type="text" placeholder="Search up..." class="z-10 md:w-1/2 w-full mx-auto text-base mt-5 mb-5 py-2 px-4 rounded-[12px] bg-neutral-500 placeholder-neutral-400 dark:bg-neutral-600 dark:placeholder-neutral-500 border-0 outline-none transition-colors duration-500 hover:bg-neutral-800">
                 </div>
             </div>
         </nav>
-    <main class="bg-neutral-700 rounded-[12px] h-screen p-5">
+    <main class="bg-neutral-400 dark:bg-neutral-700 rounded-[12px] h-screen p-5">
         <slot/>
     </main>
-    <div class="bg-neutral-700 rounded-[12px] ">
+    <div class="bg-neutral-400 dark:bg-neutral-700 rounded-[12px] ">
     <Footer      />
     </div>
     </div>
@@ -46,5 +46,10 @@ import "./layout.css"
                 card.style.setProperty("--mouse-y", `${y}px`);
         };
         }});
+
+        const userTheme = localStorage.getItem('theme')
+        if(userTheme) {
+            document.documentElement.classList.add(userTheme)
+        }
     </script>
 </html>
