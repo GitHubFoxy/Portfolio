@@ -1,4 +1,10 @@
-
+---
+export const prerender = true;
+const now = new Date();
+const day = now.getDate();
+const month = now.getUTCMonth() + 1
+const year = now.getFullYear()
+---
 <div class="flex flex-row justify-center gap-4 items-center relative p-4 lg:p-6">
     <ul class="lg:absolute flex flex-row gap-4">
         <li>
@@ -18,16 +24,5 @@
         </li>
 
     </ul>
-    <div id='date' class="hidden ml-auto lg:block"></div>
+    <div id='date' class="hidden ml-auto lg:block">{day}.0{month}.{year}</div>
 </div>
-<script>
-    
-const now = new Date();
-const day = now.getDate();
-const month = now.getUTCMonth() + 1
-const year = now.getFullYear()
-const date = document.querySelector("#date")
-if (date) {
-date.innerHTML = `${day}.0${month}.${year}`
-}
-</script>
