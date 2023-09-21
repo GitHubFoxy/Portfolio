@@ -3,7 +3,7 @@ import { ViewTransitions } from 'astro:transitions';
 import Footer from '../footer.astro'
 import "./layout.css"   
 ---
-<html lang="en" class="dark">
+<html lang="en" >
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
@@ -12,7 +12,6 @@ import "./layout.css"
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
         <link rel="icon" href="/favicon.ico" type="image/x-icon">
 		<title>beruseruko.</title>
-        <ViewTransitions />
 	</head>
 	<body class="bg-neutral-300 dark:bg-neutral-800 font-mont font-normal text-2xl p-5">
 	<div class="sm:mx-[15%] flex flex-col gap-5">
@@ -29,9 +28,9 @@ import "./layout.css"
                 </div>
             </div>
         </nav>
-    <main class="bg-neutral-400 dark:bg-neutral-700 rounded-[12px] h-screen p-5">
+    <section class="bg-neutral-400 dark:bg-neutral-700 rounded-[12px] h-screen p-5">
         <slot/>
-    </main>
+    </section>
     <div class="bg-neutral-400 dark:bg-neutral-700 rounded-[12px] ">
     <Footer      />
     </div>

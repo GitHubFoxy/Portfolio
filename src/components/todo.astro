@@ -1,6 +1,12 @@
-<h1>Whats going to display here:</h1>
+<div id="accordion" class="bg-neutral-600 cursor-pointer px-4 py-2 rounded-[12px] flex justify-between transition-colors hover:bg-neutral-500">
+    <h1 class="">Todo list</h1>
+    <p class="">+</p>
+</div>
 <p>
-    <ul>
+    <ul id='content' class="hidden px-4 py-2 mt-2 bg-neutral-400 rounded-[12px]">
+        <li>
+            glide effect on click
+        </li>
         <li>
             Active state for pages 
         </li>
@@ -45,3 +51,15 @@
         </li>
     </ul>
 </p>
+<script>
+    const accordion = document.querySelector('#accordion')
+    const content = document.querySelector('#content')
+    if (accordion) {
+        accordion.addEventListener("click", toggleShow)
+    function toggleShow() {
+        if (content) {
+        content.classList.toggle('hidden')
+        }
+}
+}
+</script>

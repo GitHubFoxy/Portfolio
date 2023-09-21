@@ -1,1 +1,30 @@
-<h1>Main components</h1>
+---
+import { Image } from 'astro:assets';
+import astroimage from '../images/astro.webp'
+---
+
+<main class="mb-5">
+    <h1 class="text-center">
+        News
+    </h1>
+    <div>
+        <div id="posts" class="grid ">
+            <div id="post" class="max-w-xs p-5 bg-neutral-500 dark:bg-neutral-600 rounded-[12px] transition-colors  hover:bg-neutral-500">
+                <Image src={astroimage} alt={'Astro image'} class:list={'rounded-[12px] pb-2 cursor-pointer'}  loading="lazy"/> 
+                <div>
+                    <h2 class="text-start">
+                        Astro
+                    </h2>
+                    <p class="text-base">
+                        The web framework that scales with you
+Astro builds fast content sites, powerful web applications, dynamic server APIs, and everything in-between.
+                    </p>
+                    <div class="flex text-base justify-between pt-2">
+                        <p class="py-2">12.09.2023</p>
+                        <button class="underline underline-offset-4 dark:hover:bg-neutral-700 hover:bg-neutral-400 px-2 py-2 transition-colors rounded-[12px]">Узнать больше</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
