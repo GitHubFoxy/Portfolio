@@ -1,6 +1,6 @@
 ---
 import Footer from '../footer.astro'
-import "./layout.css"   
+import "./layout.css"  
 ---
 <html lang="en" >
 	<head>
@@ -16,9 +16,9 @@ import "./layout.css"
 	<div class="sm:mx-[15%] flex flex-col gap-5">
         <nav class="flex flex-col gap-5" >
             <div id="cards" class="grid grid-cols-2 gap-5  lg:flex lg:gap-5 place-content-center ">
-                <a href='/'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-400 dark:bg-neutral-700 rounded-[12px] grid place-content-center transition-colors">Home</a>
-                <a href='/blog'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-400 dark:bg-neutral-700 rounded-[12px] grid place-content-center transition-colors ">Blog.</a>
-                <a href='/gym'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-400 dark:bg-neutral-700 rounded-[12px] grid place-content-center transition-colors ">Gym.</a>
+                <a href='/react'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-400 dark:bg-neutral-700 rounded-[12px] grid place-content-center transition-colors">React</a>
+                <a href='/svelte'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-400 dark:bg-neutral-700 rounded-[12px] grid place-content-center transition-colors ">Svelte</a>
+                <a href='/htmx'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-400 dark:bg-neutral-700 rounded-[12px] grid place-content-center transition-colors ">HTMX</a>
                 <a href='/settings'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-400 dark:bg-neutral-700 rounded-[12px] grid place-content-center transition-colors ">Settings.</a>
             </div>
             <div id="cards">
@@ -27,7 +27,7 @@ import "./layout.css"
                 </div>
             </div>
         </nav>
-    <section class="bg-neutral-400 dark:bg-neutral-700 rounded-[12px] min-h-screen p-5">
+    <section class="bg-neutral-400 dark:bg-neutral-700 rounded-[12px] min-h-[50vh] p-5">
         <slot/>
     </section>
     <div class="bg-neutral-400 dark:bg-neutral-700 rounded-[12px] ">
@@ -51,5 +51,16 @@ import "./layout.css"
         if(userTheme) {
             document.documentElement.classList.add(userTheme)
         }
+        const URL = location.href
+        if (URL.endsWith('/svelte')) {
+            document.querySelectorAll('.card')[1].classList.add('text-white')
+        } else if (URL.endsWith('/htmx')) {
+            document.querySelectorAll('.card')[2].classList.add('text-white')
+        } else if (URL.endsWith('/settings')) {
+            document.querySelectorAll('.card')[3].classList.add('text-white')
+        } else if (URL.endsWith('/react')) {
+            document.querySelectorAll('.card')[0].classList.add('text-white')
+        }
+
     </script>
 </html>
