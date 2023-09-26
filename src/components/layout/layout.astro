@@ -1,5 +1,4 @@
 ---
-import { ViewTransitions } from 'astro:transitions';
 import Footer from '../footer.astro'
 import "./layout.css"   
 ---
@@ -17,7 +16,7 @@ import "./layout.css"
 	<div class="sm:mx-[15%] flex flex-col gap-5">
         <nav class="flex flex-col gap-5" >
             <div id="cards" class="grid grid-cols-2 gap-5  lg:flex lg:gap-5 place-content-center ">
-                <a href='/'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-400 dark:bg-neutral-700 rounded-[12px] grid place-content-center transition-colors">Home.</a>
+                <a href='/'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-400 dark:bg-neutral-700 rounded-[12px] grid place-content-center transition-colors">Home</a>
                 <a href='/blog'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-400 dark:bg-neutral-700 rounded-[12px] grid place-content-center transition-colors ">Blog.</a>
                 <a href='/gym'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-400 dark:bg-neutral-700 rounded-[12px] grid place-content-center transition-colors ">Gym.</a>
                 <a href='/settings'class="card lg:w-96 lg:h-40 sm:h-28 md:h-36 h-24 bg-neutral-400 dark:bg-neutral-700 rounded-[12px] grid place-content-center transition-colors ">Settings.</a>
@@ -28,7 +27,7 @@ import "./layout.css"
                 </div>
             </div>
         </nav>
-    <section class="bg-neutral-400 dark:bg-neutral-700 rounded-[12px] h-screen p-5">
+    <section class="bg-neutral-400 dark:bg-neutral-700 rounded-[12px] min-h-screen p-5">
         <slot/>
     </section>
     <div class="bg-neutral-400 dark:bg-neutral-700 rounded-[12px] ">
